@@ -1,0 +1,7 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: snapshot-lolek
+spec:
+  source:
+    volumeSnapshotContentName: snapcontent-229cc99d-d13f-4466-9029-60b920b7c5fa

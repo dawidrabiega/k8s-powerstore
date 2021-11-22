@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos
+spec:
+  volumes:
+    - name: test-pvc
+      persistentVolumeClaim:
+        claimName: test-pvc
+  containers:
+    - name: centos
+      image: centos:7
+      tty: true
+      stdin: true
+      args:
+        - bash
+      volumeMounts:
+        - mountPath: "/data"
+          name: test-pvc
